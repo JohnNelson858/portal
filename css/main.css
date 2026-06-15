@@ -1,55 +1,57 @@
 /* Global rules */
 
 html {
-    background-color: whitesmoke;
+    background-color: #EDF6FF;
     font-size: 0.95em;
 }
 
 body {
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #FFFFFF;
+    color: #334155;
     margin: 0 auto;
     padding: 20px;
-    max-width:1200px;
-  }
+    max-width: 1200px;
+}
 
 ::selection {
-    color: #000; 
-    background: #ff0;
+    color: #FFFFFF;
+    background: #B9732F;
 }
 
 h1 {
     font-weight: normal;
     margin: auto;
-    background: #fff;
+    background: #FFFFFF;
     line-height: 2.5em;
 }
 
 main.wrapper {
-    background-color: white;
+    background-color: #FFFFFF;
     overflow: auto;
 }
 
 p {
-    margin: 1em; /* Top Right Bottom Left (TRBL) */
+    margin: 1em;
 }
 
-h2,h3 {
+h2,
+h3 {
     font-weight: normal;
     margin-left: 1em;
     line-height: 1em;
+    color: #437FC7;
 }
 
 a {
-    color:darkcyan;
+    color: #437FC7;
     text-decoration: none;
 }
 
 a:hover {
-    color: whitesmoke;
-    background-color: darkcyan;
+    color: #FFFFFF;
+    background-color: #437FC7;
     text-decoration: none;
 }
 
@@ -61,40 +63,43 @@ footer {
 
 /* end global rules */
 
+
 /* Responsive rules */
 
 /* DESKTOP */
 @media all and (min-width:1200px) {
+
     main.wrapper {
         width: 80%;
         margin: auto;
     }
-    
+
     h1 {
         width: 79%;
         padding-left: 1%;
     }
-    
+
     picture.profile img {
         width: 50%;
         float: left;
         margin-right: 2em;
     }
-    
+
 }
 
 /* TABLET */
 @media all and (min-width:501px) and (max-width:1199px) {
+
     main.wrapper {
         width: 90%;
         margin: auto;
     }
-    
+
     h1 {
         width: 89%;
         padding-left: 1%;
     }
-    
+
     picture.profile img {
         width: 50%;
         float: right;
@@ -105,84 +110,91 @@ footer {
 
 /* PHONE */
 @media all and (max-width:500px) {
+
     main.wrapper {
         width: 100%;
     }
-    
+
     h1 {
         width: 99%;
         padding-left: 1%;
     }
-    
+
     picture.profile img {
         width: 100%;
     }
-    
+
 }
 
-/* start project container rules */
-  
+
+/* =====================================
+   PROJECT CONTAINER RULES
+===================================== */
+
 .projects-container {
-    max-width: 900px;  /* Keeps things readable on desktop */
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
-  }
-  
-  /* The Main Project Card Wrapper */
-  .project-card {
+}
+
+/* Project Card */
+
+.project-card {
     display: flex;
-    flex-direction: row; /* Default layout: Image left, text right */
+    flex-direction: row;
     align-items: center;
     gap: 30px;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px; /* Smooth rounded corners */
+    background: #FFFFFF;
+    border: 1px solid #EDF6FF;
+    border-radius: 12px;
     padding: 24px;
     margin-bottom: 30px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 10px rgba(67, 127, 199, 0.12);
     transition: transform 0.2s ease;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-2px); /* Subtle interaction cue */
-  }
-  
-  /* The Magic Mirror: Automatically alternate left/right layout */
-  .project-card:nth-child(even) {
-    flex-direction: row-reverse; /* Flips the order for every second card */
-  }
-  
-  /* Image Control Group */
-  .project-image {
-    flex-shrink: 0; /* Prevents text from squeezing the image container */
-  }
-  
-  .project-image img {
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+}
+
+.project-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Images */
+
+.project-image {
+    flex-shrink: 0;
+}
+
+.project-image img {
     width: 150px;
     height: 150px;
-    object-fit: cover; /* Forces screenshots to crop nicely instead of squishing */
+    object-fit: cover;
     border-radius: 8px;
-    border: 1px solid #cbd5e1;
-  }
-  
-  /* Content & CTA Link Elements */
-  .project-content {
+    border: 2px solid #6DAFFE;
+}
+
+/* Content */
+
+.project-content {
     flex-grow: 1;
-  }
-  
-  .project-content h2 {
+}
+
+.project-content h2 {
     margin-top: 0;
-    color: #1e293b;
-  }
-  
-  .project-links {
+    color: #437FC7;
+}
+
+/* Buttons */
+
+.project-links {
     margin-top: 20px;
     display: flex;
     gap: 12px;
-  }
-  
-  /* Flexible, clean Button styles */
-  .btn {
+}
+
+.btn {
     display: inline-block;
     text-decoration: none;
     padding: 8px 16px;
@@ -190,38 +202,41 @@ footer {
     font-size: 0.9rem;
     font-weight: 500;
     transition: background-color 0.2s;
-  }
-  
-  .demo-btn {
-    background-color: darkcyan;
-    color: #ffffff;
-  }
-  
-  .demo-btn:hover {
-    background-color: rgb(95, 95, 95);
-  }
-  
-  .repo-btn {
-    background-color: #f1f5f9;
-    color: #334155;
-    border: 1px solid #cbd5e1;
-  }
-  
-  .repo-btn:hover {
-    background-color: rgb(95, 95, 95);
-  }
-  
-  /* Responsive Overrides: If screen is small, stack everything vertically */
-  @media (max-width: 650px) {
-    .project-card, 
-    .project-card:nth-child(even) {
-      flex-direction: column;
-      text-align: center;
-    }
-    
-    .project-links {
-      justify-content: center;
-    }
-  }
+}
 
-/* end project container rules */
+.demo-btn {
+    background-color: #437FC7;
+    color: #FFFFFF;
+}
+
+.demo-btn:hover {
+    background-color: #B9732F;
+    color: #FFFFFF;
+}
+
+.repo-btn {
+    background-color: #EDF6FF;
+    color: #437FC7;
+    border: 1px solid #6DAFFE;
+}
+
+.repo-btn:hover {
+    background-color: #B9732F;
+    color: #FFFFFF;
+}
+
+/* Responsive Project Cards */
+
+@media (max-width:650px) {
+
+    .project-card,
+    .project-card:nth-child(even) {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-links {
+        justify-content: center;
+    }
+
+}
